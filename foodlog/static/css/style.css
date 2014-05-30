@@ -1,0 +1,29 @@
+body { 
+    color: #444;
+    background-color: #f6f6ef;
+    font: 12px/26px Verdana, sans-serif; 
+    margin: 1em auto; 
+    width: 90%; 
+    -webkit-text-size-adjust: 100%; 
+    /* max-width:700px; */
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: #005599;
+}
+
+a:hover {
+    color: #0099ff;
+}
+
+
+pre {
+    font: 16px Consolas, monospace;
+    color: black;
+}
+
+form textarea {
+    width: 40%;
+    height: 15em;
+}

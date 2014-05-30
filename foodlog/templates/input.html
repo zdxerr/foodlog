@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div>
+    <form method="post">
+        <textarea name="text">{{ text }}</textarea>
+        <input type="submit" id="submit">
+    </form>
+</div>
+<pre id="return">
+
+</pre>
+
+<script>
+console.log("TEST")
+$( "form" ).submit(function(event) {
+    event.preventDefault();
+    console.log(event.target["text"].value);
+    $.getJSON("/parse", {text: event.target["text"].value})
+        .done(function(json) {
+            console.log(json);
+            $( "#return" ).text(JSON.stringify(json, null, '    '));
+        })
+        .fail(function( jqxhr, textStatus, error ) {
+            var err = textStatus + ", " + error;
+            console.log( "Request Failed: " + err); 
+        });
+});
+</script>
+
+{% endblock %}
